@@ -12,8 +12,8 @@ class Carro:
         # de no existir de crea el carro / else: vuelve a la sesión del usuario
         if not carro:
             carro = self.session["carro"] = {}
-        else:
-            self.carro = carro
+        
+        self.carro = carro
 
     # método para agregar productos al carro
     def agregar(self, producto):
@@ -29,8 +29,9 @@ class Carro:
         else:
             # si el producto -SI- está en el carro
             for key, value in self.carro.items():
-                for key == str(producto.id):
+                if key == str(producto.id):
                     value["cantidad"] = value["cantidad"] + 1
+                    value["precio"] = float(value["precio"]) + producto.precio
                     break
         # guardado de la sesión para ambos casos (actualización del carro)
         self.guardar_carro()
@@ -50,8 +51,9 @@ class Carro:
     # restar una unidad a un producto en el carro
     def restar_producto(self, producto):
         for key, value in self.carro.items():
-            for key == str(producto.id):
+            if key == str(producto.id):
                 value["cantidad"] = value["cantidad"] - 1
+                value["precio"] = float(value["precio"]) - producto.precio
                 if value["cantidad"] < 1:
                     self.eliminar(producto)
                 break
