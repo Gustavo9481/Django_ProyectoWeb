@@ -5,14 +5,14 @@
 class Carro:
     # constructor del carro de compras
     def __init__(self, request):
-        self.request = request
+        '''self.request = request
         self.session = request.session
         carro = self.session.get("carro")
 
         # de no existir de crea el carro / else: vuelve a la sesión del usuario
         if not carro:
-            carro = self.session["carro"] = {}
-        
+            carro = self.session["carro"] = {}'''
+        # else:
         self.carro = carro
 
     # método para agregar productos al carro

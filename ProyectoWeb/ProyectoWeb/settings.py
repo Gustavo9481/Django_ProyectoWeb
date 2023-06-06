@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'Blog',
     'Contacto',
     'Carro',
+    'App_Autenticacion',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +143,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'guscode.apps@gmail.com'
 EMAIL_HOST_PASSWORD = '*****'
+
+# Carga de Crispy crispy
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"   
