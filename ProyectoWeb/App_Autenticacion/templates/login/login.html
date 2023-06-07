@@ -7,14 +7,20 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h4 style="color: white; text-align: center; margin-top: 10px;">Registro de Usuario</h4>
+<h4 style="color: white; text-align: center; margin-top: 10px;">Login</h4>
 <form method="post" action="" style="color: white;">
 
   {% csrf_token %}
 
   <div style="width: 50%; margin: auto;">
+  {% if messages %}
+    {% for mensaje in messages %}
+    <span class="alert alert-{{mensaje.tags}}">{{mensaje}}</span>
+    {% endfor %}
+  {% endif %}
+  <br/><br/>
   {{form|crispy}}
-  <button type="submit" class="btn btn-success">Registrarse</button>
+  <button type="submit" class="btn btn-success">Login</button>
   </div>
 </form>
 

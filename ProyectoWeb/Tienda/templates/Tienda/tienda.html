@@ -7,8 +7,19 @@
 {% block content %}
 <div class="container">
   <div style="float: right;">
-    <p style="color: white;">Total Carro:&nbsp;$&nbsp;{{importe_total_carro}}</p>
-    {% include "Carro/widget.html"%}
+
+  {% if request.user.is_authenticated %}
+    
+    {% include "Carro/widget.html" %}
+
+  {% else %}
+
+    <div class="card" style="width:100%; margin: 10px 10px; padding: 7px; text-align: center;">
+      <p>Para realizar compras<br/>debes hacer <a href="{% url 'Login' %}" class="btn btn-success">Login</a></p>
+    </div>
+
+  {% endif %}
+
   </div>
   <div class="row">
 {% for producto in productos %}
