@@ -36,7 +36,7 @@ class Carro:
         # guardado de la sesión para ambos casos (actualización del carro)
         self.guardar_carro()
     
-    # método para guardar los cambios o actualizar el carro al agregar prodscutos
+    # método para guardar los cambios o actualizar el carro al agregar productos
     def guardar_carro(self):
         self.session["carro"] = self.carro
         self.session.modified = True

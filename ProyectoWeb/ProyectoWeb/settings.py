@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'Contacto',
     'Carro',
     'App_Autenticacion',
+    'App_Pedidos',
     'crispy_forms',
     'crispy_bootstrap5',
 ]
